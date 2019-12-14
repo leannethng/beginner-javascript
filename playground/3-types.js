@@ -1,4 +1,6 @@
 /* eslint-disable */
+
+// Strings
 /*
 const name = 'wes';
 const middle = "topher";
@@ -31,6 +33,8 @@ const html = `
 
 document.body.innerHTML = html;
 
+// Numbers
+
 */
 
 // const age = 100.5;
@@ -48,6 +52,7 @@ console.log(`Each kids gets ${eachKidGets}`);
 const price = 1034;
 */
 
+// Objects
 
 /*
 const person = {
@@ -61,6 +66,7 @@ let dog;
 console.log(dog);
 dog = 'snickers';
 
+// Null and Undefined
 
 let somethingUndefined;
 const somethingNull = null;
@@ -78,6 +84,7 @@ teller.first = 'Teller';
 teller.last = null;
 
 */
+// Boolean and Equality
 
 let isDrawing = false;
 let age = 18;
