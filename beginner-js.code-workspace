@@ -1,7 +1,12 @@
 {
-	"folders": [
-		{
-			"path": "/Users/leanne/Sites/Code-Learning-Projects/wes-bos-beginner-js"
-		}
-	]
+  "folders": [
+    {
+      "name": "wes-bos-beginner-js",
+      "path": "/Users/leanne/Sites/Code-Learning-Projects/wes-bos-beginner-js"
+    },
+    {
+      "name": "JavaScript30-master",
+      "path": "/Users/leanne/Sites/Code-Learning-Projects/wes-bos-beginner-js/JavaScript30-master"
+    }
+  ]
 }

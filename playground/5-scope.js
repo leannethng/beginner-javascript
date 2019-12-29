@@ -32,19 +32,19 @@ function logDog(dog) {
 
 function go() {
   const dog = 'sunny';
-  logDog('sunny');
+  logDog(dog);
 }
 
 go();
 
-function yell() {
-  console.log(name.toUpperCase())
-}
+// function yell() {
+//   console.log(name.toUpperCase())
+// }
 
-function sayHi(name) {
+// function sayHi(name) {
 
-  yell();
-}
+//   yell();
+// }
 
 
-yell();
+// yell();
