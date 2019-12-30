@@ -1,21 +1,46 @@
 // Make a div
-
+<div></div>
 // add a class of wrapper to it
-
+<div class='wrapper'></div>
 // put it into the body
+<body>
+    <div class='wrapper'></div>  
+</body>
 
 // make an unordered list
+<body>
+    <div class='wrapper'>
+        <ul>
+          
+        </ul>
 
+    </div>  
+</body>
 // add three list items with the words "one, two three" in them
 // put that list into the above wrapper
+<body>
+    <div class='wrapper'>
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+
+    </div>  
+</body>
+
 
 // create an image
 
+
 // set the source to an image
 // set the width to 250
+<img src="https://picsum.photos/500" width="250"></img>
 // add a class of cute
+<img class="cute" src="https://picsum.photos/500" alt="Cute Puppy "width="250"></img>
 // add an alt of Cute Puppy
 // Append that image to the wrapper
+
 
 // with HTML string, make a div, with two paragraphs inside of it
 // put this div before the unordered list from above
