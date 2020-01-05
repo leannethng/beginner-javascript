@@ -30,7 +30,7 @@ signupForm.addEventListener('submit', function(e) {
 
 function logEvent(e) {
   console.log(e.type);
-  console.log(event.currentTarget.value);
+  console.log(e.currentTarget.value);
   console.log(e.keyCode === 80);
   // console.log(e.key);
   console.log(e.key == 'p');
