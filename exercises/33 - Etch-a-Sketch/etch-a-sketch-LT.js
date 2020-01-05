@@ -24,6 +24,7 @@ window.addEventListener('keydown', function(e) {
     case 'ArrowLeft':
       x += -10;
       e.preventDefault();
+      ß;
       break;
     case 'ArrowRight':
       x += 10;
@@ -36,6 +37,8 @@ window.addEventListener('keydown', function(e) {
     case 'ArrowDown':
       y += 10;
       e.preventDefault();
+      break;
+    default:
       break;
   }
   ctx.lineTo(x, y);
