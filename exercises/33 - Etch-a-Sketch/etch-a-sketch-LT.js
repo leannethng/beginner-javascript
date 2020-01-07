@@ -11,6 +11,17 @@ const lineLength = 60;
 
 // setting up canvas draw
 // Line Features
+const myGradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+myGradient.addColorStop(0, 'red');
+myGradient.addColorStop(0.14, 'orange');
+myGradient.addColorStop(0.28, 'yellow');
+myGradient.addColorStop(0.42, 'green');
+myGradient.addColorStop(0.56, 'blue');
+myGradient.addColorStop(0.7, 'indigo');
+myGradient.addColorStop(0.84, 'violet');
+myGradient.addColorStop(1, 'red');
+// ctx.strokeStyle = myGradient;
+
 // ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth = lineLength;
@@ -54,9 +65,8 @@ window.addEventListener('keydown', function(e) {
 shakeButton.addEventListener('click', function(e) {
   ctx.setTransform(1, 0, 0, 1, 0, 0);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // ctx.moveTo(150, 150);
-  // ctx.lineTo(150, 150);
-
-  ctx.restore();
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(x, y);
+  ctx.stroke();
 });
