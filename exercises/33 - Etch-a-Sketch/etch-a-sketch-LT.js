@@ -4,8 +4,8 @@ const ctx = canvas.getContext('2d');
 const shakeButton = document.querySelector('.shake');
 console.log(shakeButton);
 // Define X and Y coordinate starting points
-let x = 150;
-let y = 100;
+// let x = 150;
+// let y = 100;
 // Define how long the line is that is drawn
 const lineLength = 60;
 
@@ -22,6 +22,15 @@ myGradient.addColorStop(0.84, 'violet');
 myGradient.addColorStop(1, 'red');
 // ctx.strokeStyle = myGradient;
 
+// destructuring
+// const width = canvas.width;
+// const { width } = canvas;
+// const { height } = canvas;
+const { width, height } = canvas;
+
+// create random x and y points on the canvas
+let x = Math.floor(Math.random() * width);
+let y = Math.floor(Math.random() * height);
 // ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
 ctx.lineWidth = lineLength;
