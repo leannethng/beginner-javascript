@@ -2,40 +2,20 @@
 const canvas = document.querySelector('#etch-a-sketch');
 const ctx = canvas.getContext('2d');
 const shakeButton = document.querySelector('.shake');
-console.log(shakeButton);
-// Define X and Y coordinate starting points
-// let x = 150;
-// let y = 100;
+
 // Define how long the line is that is drawn
 const LINE_WIDTH = 50;
 const MOVE_AMOUNT = 50;
-
 let hue = 0;
 
 ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
-// setting up canvas draw
-// Line Features
-// const myGradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-// myGradient.addColorStop(0, 'red');
-// myGradient.addColorStop(0.14, 'orange');
-// myGradient.addColorStop(0.28, 'yellow');
-// myGradient.addColorStop(0.42, 'green');
-// myGradient.addColorStop(0.56, 'blue');
-// myGradient.addColorStop(0.7, 'indigo');
-// myGradient.addColorStop(0.84, 'violet');
-// myGradient.addColorStop(1, 'red');
-// ctx.strokeStyle = myGradient;
 
-// destructuring
-// const width = canvas.width;
-// const { width } = canvas;
-// const { height } = canvas;
 const { width, height } = canvas;
 
 // create random x and y points on the canvas
 let x = Math.floor(Math.random() * width);
 let y = Math.floor(Math.random() * height);
-// ctx.lineJoin = 'round';
+
 ctx.lineCap = 'round';
 ctx.lineWidth = LINE_WIDTH;
 ctx.beginPath();
@@ -43,13 +23,12 @@ ctx.moveTo(x, y);
 ctx.lineTo(x, y);
 ctx.stroke();
 
+// Draw function
 // destructured to just pass in .key with {key}
 function draw({ key }) {
   // increment the hue
-
   hue += 3;
   ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
-  console.log(hue);
   ctx.beginPath();
   ctx.moveTo(x, y);
   // move our x and y values depending on what the user did
@@ -79,8 +58,6 @@ function handleKey(e) {
     e.preventDefault();
     // To pass in to options
     draw({ key: e.key });
-    console.log(e.key);
-    console.log('HANDLING KEY');
   }
 }
 
@@ -100,6 +77,5 @@ function clearCanvas() {
 }
 
 // add event listener for keys pressed and clearing canvas
-
 window.addEventListener('keydown', handleKey);
 shakeButton.addEventListener('click', clearCanvas);
