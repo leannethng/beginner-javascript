@@ -17,7 +17,7 @@
 
 ---
 
-Course Materials:[Beginner JavaScript](https://BeginnerJavaScript.com)
+Course Materials: [Beginner JavaScript](https://BeginnerJavaScript.com)
 
 
 
