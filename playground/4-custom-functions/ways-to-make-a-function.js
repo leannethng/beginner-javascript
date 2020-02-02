@@ -1,78 +1,117 @@
-// function doctorize(firstName) {
-//   return `Dr. ${firstName}`;
+// Regular function
+// function doctorize(firstName){
+//     return `Dr. ${firstName}`
 // }
 
-// Anon Function
-// function (firstName) {
-//   return `Dr. ${firstName}`;
+// // anonomus function
+// function (firstName){
+//     return `Dr. ${firstName}`
 // }
 
-// Function Expression
-// const doctorize = function(firstName) {
-//   return `Dr. ${firstName}`;
-// };
+// // function expression
+// const doctorize = function (firstName){
+//     return `Dr. ${firstName}`
+// }
 
-/* eslint-disable */
-const inchToCM = inches => inches * 2.54;
+// Fuctions declared with the function key words are hoisted, ie the run at the top
+// Functions declared with const or variables are not hoisted, hoisting could be an interview question but isn't really used.
+
+// Arrow function
+
+// function inchesToCM(inches) {
+//   const cm = inches * 2.54;
+//   return cm;
+// }
+
+// function inchesToCM(inches) {
+//   return inches * 2.54;
+// }
+
+// // Anon function
+// const inchesToCM = function(inches) {
+//     return inches * 2.54;
+//   };
+
+//   // This is an arrow function
+// const inchesToCM = (inches) => inches * 2.54;
+
+// //   Implict return - no return keyword. if you only have one keyworkd, you can get rid of the () too
+
+// const inchesToCM = inches => inches * 2.54;
 
 // function add(a, b = 3) {
 //   const total = a + b;
 //   return total;
 // }
 
-// const add = (a, b = 3) => a + b;
+const add = (a, b = 3) => a + b;
 
-// returning an object
+// arrow practice
 
 // function makeABaby(first, last) {
 //   const baby = {
 //     name: `${first} ${last}`,
-//     age: 0
-//   }
+//     age: 0,
+//   };
 //   return baby;
 // }
 
+// This is an arrow function but nothing wrong with doing a regular function, dont do arrow function by default, it will become clear as to when to use
 const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: 0 });
 
+// IIFE - immdiately invoked function expression
 
-// IIFE
-// Immediately Invoked Function Expression
+// () around a function make it run first. the (); at the end makes it run immediately
+(function() {
+  console.log(`Running the anon function`);
+  return `You are cool`;
+})();
 
-(function(age) {
-  return `You are cool and age ${age}`;
-})(10);
+// Methods!!! a function that lives inside of an object
 
-// Methods!!!
-const wes = {
-  name: 'Westopher Bos',
-  // Method!
+// `log` is a function that lives inside the object `console` - log is thereforea called a method
+
+// const loola = {
+//     name: `loola monster`,
+//     sayHi: function sayHi() {
+//       console.log(`Hi loola`);
+//       return `Hi loola`;
+//     },
+//   };
+
+// const loola = {
+//     name: `loola monster`,
+//     sayHi: function() {
+//       console.log(`Hi loola`);
+//       return `Hi loola`;
+//     },
+//   };
+
+// disabled.eslint
+
+const loola = {
+  name: `loola monster`,
+  //   method
+  // eslint-disable-next-line object-shorthand
   sayHi: function() {
-    console.log(`Hey ${this.name}`);
-    return 'Hey Wes';
+    console.log(`Hi loola`);
+    return `Hi loola`;
   },
-  // Short hand Method
+  //   short hand method
   yellHi() {
-    console.log('HEY WESSSSS');
+    console.log(`HELOOO loola`);
   },
   // Arrow function
-  wisperHi: () => {
-    console.log('hii wesss im a mouse');
-  }
-}
+  whisperHi: () => {
+    console.log(`hi loola i am a mouse`);
+  },
+};
 
-// Callback Functions
-// Click Callback
-const button = document.querySelector('.clickMe');
+// enabled.eslint
 
-function handleClick() {
-  console.log('Great Clicking!!');
-}
+// callback functions
+// click call back
 
-button.addEventListener('click', function() {
-  console.log('NIce Job!!!');
-});
+const button = document.querySelector(`.clickMe`);
 
-// Timer Callback
-setTimeout(() => {
-  console.log('DONE! Time to eat!');
-}, 1000);
+button.addEventListener('click', loola.whisperHi);

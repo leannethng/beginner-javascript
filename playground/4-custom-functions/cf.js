@@ -1,31 +1,42 @@
-// Function Definition
-function calculateBill(billAmount, taxRate = 0.13, tipRate = 0.15) {
-  // this is the function body
-  console.log('Running Calculate Bill!!');
-  const total = billAmount + billAmount * taxRate + billAmount * tipRate;
+console.log(`it works`);
+
+// function definition
+
+function calculateBill(bill, taxRate) {
+  // this is the functon body
+  console.log(`this is running`);
+  const total = bill * (1 + taxRate);
+  //   console.log(total);
   return total;
 }
 
-// Function Call. Or **Run**
-const wesTotal = 500;
-const wesTaxRate = 0.3;
-// const myTotal = calculateBill(wesTotal, wesTaxRate);
+// function call or **run**
 
-// Function Definition
+const loolaTotal = 500;
+const loolaTaxRate = 0.3;
+const myTotal = calculateBill(loolaTotal, loolaTaxRate);
+
+console.log(myTotal);
+
+// console.log(`Your total is $${myTotal}`);
+
+// or
+// console.log(`Your total is $${calculateBill()}`);
+
 function sayHiTo(firstName) {
   return `Hello ${firstName}`;
 }
 
-// const greeting = sayHiTo('Wes');
-// console.log(greeting);
+const greeting = sayHiTo(`Loola`);
+console.log(greeting);
 
 function doctorize(name) {
   return `Dr. ${name}`;
 }
-
-function yell(name = 'Silly Goose') {
+function yell(name = `silly goose`) {
   return `HEY ${name.toUpperCase()}`;
 }
 
-const myBill4 = calculateBill(100, undefined, 0.2);
-console.log(myBill4);
+const yellDoc = yell(doctorize(`Loola`));
+
+console.log(yellDoc);
