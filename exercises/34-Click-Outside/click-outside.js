@@ -23,7 +23,10 @@ function openModal(e) {
 
   // Append the data to the modal window
   modalInner.innerHTML = `
-    <img width="600" height="300" src='${cardImageSrc}' alt='${imgAlt}' />
+    <img width="600" height="300" src='${cardImageSrc.replace(
+      '200',
+      '600'
+    )}' alt='${imgAlt}' />
     <p>${desc}</p>
     <button class="modal-button">Close</button>
   `;
