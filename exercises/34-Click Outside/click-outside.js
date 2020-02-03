@@ -26,12 +26,12 @@ function openModal(e) {
     <img src='${cardImageSrc}' alt='${imgAlt}' />
     <p>${desc}</p>
   `;
-
   // Once button is clicked - unhide the modal window
   console.log('it got clicked');
   modalOuter.classList.add('open');
 }
-// When the modal-outer is clicked - hide them both
+
+// When the modal-outer is clicked - hide the modal
 function closeModal() {
   console.log('it is closed');
   modalOuter.classList.remove('open');
@@ -58,6 +58,7 @@ modalOuter.addEventListener('click', function(event) {
   }
 });
 
+// ---- Not needed - Just for testing ----
 // Event listener on the inner modal to test the close functionality
 modalInner.addEventListener('click', function() {
   console.log("don't close");
