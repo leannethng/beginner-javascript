@@ -23,6 +23,9 @@ Learnt:
 - Traversing the DOM
 - Click Events and Event Listeners
 - Looping with map to listen for multiple events
+- `.closest` traverses up the DOM tree
+- `.queryselector` traverses down the DOM tree
+
 ---
 
 Course Materials: [Beginner JavaScript](https://BeginnerJavaScript.com)
