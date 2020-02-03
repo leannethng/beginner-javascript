@@ -4,7 +4,7 @@ wes.addEventListener('click', function(e) {
   e.preventDefault();
   const shouldChangePage = confirm('This page might be malicious');
   if (shouldChangePage) {
-    window.location = event.currentTarget.href;
+    window.location = e.currentTarget.href;
   }
 
   // if(!shouldChangePage){
@@ -17,11 +17,11 @@ const signupForm = document.querySelector('[name="signup"]');
 signupForm.addEventListener('submit', function(e) {
   console.log(e);
 
-  console.dir(event.currentTarget.name.value);
-  console.dir(event.currentTarget.email.value);
-  console.dir(event.currentTarget.agree.checked);
+  console.dir(e.currentTarget.name.value);
+  console.dir(e.currentTarget.email.value);
+  console.dir(e.currentTarget.agree.checked);
 
-  const name = event.currentTarget.name.value;
+  const name = e.currentTarget.name.value;
   if (name.includes('chad')) {
     alert('sorry!');
     e.preventDefault();
