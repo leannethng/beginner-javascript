@@ -25,6 +25,7 @@ function openModal(e) {
   modalInner.innerHTML = `
     <img src='${cardImageSrc}' alt='${imgAlt}' />
     <p>${desc}</p>
+    <button class="modal-button">Close</button>
   `;
   // Once button is clicked - unhide the modal window
   console.log('it got clicked');
@@ -49,17 +50,13 @@ cardButton.forEach(button => {
 modalOuter.addEventListener('click', function(event) {
   // on click this checks isOutside is True or False
   // is the click NOT on the modal-inner - TRUE or FALSE
+  const isButton = event.target.closest('.modal-button');
+  console.log('button clicked!');
   const isOutside = !event.target.closest('.modal-inner');
   console.log(isOutside);
   // If the click is NOT on the modal-inner then close the modal
-  if (isOutside) {
+  if (isOutside || isButton) {
     // Calling the closeModal function that was made above to do the action
     closeModal();
   }
-});
-
-// ---- Not needed - Just for testing ----
-// Event listener on the inner modal to test the close functionality
-modalInner.addEventListener('click', function() {
-  console.log("don't close");
 });
