@@ -27,6 +27,9 @@ Learnt:
 - `.closest` traverses up the DOM tree
 - `.queryselector` traverses down the DOM tree
 
+Extras: 
+- Added a button to the modal window that can be clicked to close the modal
+
 ---
 
 Course Materials: [Beginner JavaScript](https://BeginnerJavaScript.com)
