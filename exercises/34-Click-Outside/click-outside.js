@@ -23,7 +23,7 @@ function openModal(e) {
 
   // Append the data to the modal window
   modalInner.innerHTML = `
-    <img src='${cardImageSrc}' alt='${imgAlt}' />
+    <img width="600" height="300" src='${cardImageSrc}' alt='${imgAlt}' />
     <p>${desc}</p>
     <button class="modal-button">Close</button>
   `;
@@ -57,6 +57,12 @@ modalOuter.addEventListener('click', function(event) {
   // If the click is NOT on the modal-inner then close the modal
   if (isOutside || isButton) {
     // Calling the closeModal function that was made above to do the action
+    closeModal();
+  }
+});
+
+window.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
     closeModal();
   }
 });
