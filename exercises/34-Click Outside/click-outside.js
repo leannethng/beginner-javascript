@@ -6,8 +6,28 @@ const modalOuter = document.querySelector('.modal-outer');
 const modalInner = document.querySelector('.modal-inner');
 
 // --- Functionality for event listeners ---
-// Once button is clicked - unhide the modal window
-function openModal() {
+// OpenModel has a listener below - Listens for clicks on a button
+function openModal(e) {
+  // Captures the current button
+  const button = e.currentTarget;
+  // sets card to retrieve the closest card class from the current button
+  const card = button.closest('.card');
+  // using the card info select the img src and set it to cardImageSrc
+  const cardImageSrc = card.querySelector('img').src;
+  // using the card info select the text string in the h2 and set it to name
+  // const name = card.querySelector('h2').textContent;
+  // set the alt to the alt text
+  const imgAlt = card.querySelector('img').alt;
+  // set desc to the data-description text
+  const desc = card.dataset.description;
+
+  // Append the data to the modal window
+  modalInner.innerHTML = `
+    <img src='${cardImageSrc}' alt='${imgAlt}' />
+    <p>${desc}</p>
+  `;
+
+  // Once button is clicked - unhide the modal window
   console.log('it got clicked');
   modalOuter.classList.add('open');
 }
