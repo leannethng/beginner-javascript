@@ -11,6 +11,7 @@ function scrollToAccept() {
   const button = document.querySelector('button');
   let lastScrollPosition = 0;
 
+  // Old method of finding the end of the scroll
   function scrollToEnd() {
     lastScrollPosition = window.scrollY;
     console.log(lastScrollPosition);
