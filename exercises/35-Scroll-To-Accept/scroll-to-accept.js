@@ -16,11 +16,14 @@ function scrollToAccept() {
     console.log(lastScrollPosition);
     if (terms.scrollHeight - terms.clientHeight === terms.scrollTop) {
       console.log('its at the bottom');
-      button.removeAttribute('disabled');
-    } else {
-      button.setAttribute('disabled');
+      return button.removeAttribute('disabled', '');
     }
+    console.log('you cant click');
+    return button.setAttribute('disabled', '');
   }
 
   terms.addEventListener('scroll', scrollToEnd);
 }
+
+// When using a function you need to run it
+scrollToAccept();
