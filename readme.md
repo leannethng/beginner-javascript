@@ -1,8 +1,7 @@
-# Beginner JavaScript
+# Vanilla JS Projects
 
-### Learning Vanilla JS Projects
-
-#### [Etch-a-Sketch](https://codepen.io/leannethng/pen/dyPBggo) - Codepen 
+#### Etch-a-Sketch
+* [Codepen Demo](https://codepen.io/leannethng/pen/dyPBggo)
 * [Project Code](https://github.com/leannethng/beginner-javascript/tree/master/exercises/33-Etch-a-Sketch)
 
 
@@ -16,7 +15,8 @@
  - Switch statements
 
 ---
-#### [Modal Window](https://codepen.io/leannethng/pen/bGNXJOb) - Codepen 
+#### Modal Window
+* [Codepen Demo](https://codepen.io/leannethng/pen/bGNXJOb)
 * [Project Code](https://github.com/leannethng/beginner-javascript/tree/master/exercises/34-Click-Outside)
 
 Learnt:
@@ -29,6 +29,15 @@ Learnt:
 
 Extras: 
 - Added a button to the modal window that can be clicked to close the modal
+
+---
+#### Scroll to Accept
+* [Codepen Demo](https://codepen.io/leannethng/pen/wvawmEy)
+* [Project Code](https://github.com/leannethng/beginner-javascript/tree/master/exercises/35-Scroll-To-Accept)
+
+Learnt:
+- `IntersectionObserver` to watch for visibility of an element or object
+- Wrapping code into functions
 
 ---
 
