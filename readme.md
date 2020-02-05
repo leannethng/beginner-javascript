@@ -2,6 +2,9 @@
 
 Each of these projects have been built using assets from Beginner JavaScript Course by Wes Bos. My strategy with these projects is to use the requirements to tackle each project myself first before watching the solution. Below are my notes, learnings and finished projects. 
 
+## Project List:
+[Etch-a-Sketch](#Etch-a-Sketch)
+
 
 #### Etch-a-Sketch
 * [Codepen Demo](https://codepen.io/leannethng/pen/dyPBggo)
