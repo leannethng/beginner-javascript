@@ -3,14 +3,18 @@
 Each of these projects have been built using assets from Beginner JavaScript Course by Wes Bos. My strategy with these projects is to use the requirements to tackle each project myself first before watching the solution. Below are my notes, learnings and finished projects. 
 
 ## Project List:
-* [Etch-a-Sketch](#Etch-a-Sketch)
-* [Modal Window](#Modal-Window)
-* [Scroll to Accept](#Scroll-to-Accept)
+[Etch-a-Sketch](#Etch-a-Sketch)
+
+[Modal Window](#Modal-Window)
+
+[Scroll to Accept](#Scroll-to-Accept)
 
 ---
+
 ## Etch-a-Sketch
-* [Codepen Demo](https://codepen.io/leannethng/pen/dyPBggo)
-* [Project Code](https://github.com/leannethng/beginner-javascript/tree/master/exercises/33-Etch-a-Sketch)
+[Codepen Demo](https://codepen.io/leannethng/pen/dyPBggo)
+
+[Project Code](https://github.com/leannethng/beginner-javascript/tree/master/exercises/33-Etch-a-Sketch)
 
  <img src="https://github.com/leannethng/beginner-javascript/blob/e46ff9f07a33542fdfd4209c9288341b917c5cac/exercises/33%20-%20Etch-a-Sketch/Etch-a-Sketch.gif" width='500'/>
  
@@ -19,6 +23,7 @@ Each of these projects have been built using assets from Beginner JavaScript Cou
  * [Arrow KeyPress](https://stackoverflow.com/questions/5597060/detecting-arrow-key-presses-in-javascript)
  * [Clearing Canvas for re-drawing](https://stackoverflow.com/questions/2142535/how-to-clear-the-canvas-for-redrawing)
  * [Canvas createLinearGradient()](https://www.w3schools.com/tags/canvas_createlineargradient.asp)
+ 
  
  **Learnt:** 
  - Canvas 
@@ -29,9 +34,11 @@ Each of these projects have been built using assets from Beginner JavaScript Cou
  
 
 ---
+
 ## Modal Window
-* [Codepen Demo](https://codepen.io/leannethng/pen/bGNXJOb)
-* [Project Code](https://github.com/leannethng/beginner-javascript/tree/master/exercises/34-Click-Outside)
+[Codepen Demo](https://codepen.io/leannethng/pen/bGNXJOb)
+
+[Project Code](https://github.com/leannethng/beginner-javascript/tree/master/exercises/34-Click-Outside)
 
 **Useful links I used to solve this:**
 * [Element.closest docs](https://developer.mozilla.org/en-US/docs/Web/API/Element/closest)
@@ -46,10 +53,12 @@ Each of these projects have been built using assets from Beginner JavaScript Cou
 - `.closest` traverses up the DOM tree
 - `.queryselector` traverses down the DOM tree
 
+
 **Extra functionality:** 
 - Added a button to the modal window that can be clicked to close the modal.
 
 **Notes:**
+
 While making this I decided to add extra functionality and felt for the user experience it would make sense to have a button on the modal that could be pressed to close the modal as well as the click outside functionality.
 
 When adding the button directly to the HTML I found it was getting removed as .innerHTML was replacing the contents inside the inner modal div. I tried switching to use `Element.insertAdjacentHTML()` however I realized we do want the functionality to replace the current contents with the new image and title etc instead of appending and adding.
@@ -59,8 +68,9 @@ I then created the button in the JS and that seems to work as intended.
 ---
 
 ## Scroll to Accept
-* [Codepen Demo](https://codepen.io/leannethng/pen/wvawmEy)
-* [Project Code](https://github.com/leannethng/beginner-javascript/tree/master/exercises/35-Scroll-To-Accept)
+[Codepen Demo](https://codepen.io/leannethng/pen/wvawmEy)
+
+[Project Code](https://github.com/leannethng/beginner-javascript/tree/master/exercises/35-Scroll-To-Accept)
 
 **Useful links I used to solve this:** 
 * [Determine if div is scrolled to bottom](https://stackoverflow.com/questions/876115/how-can-i-determine-if-a-div-is-scrolled-to-the-bottom)
@@ -71,6 +81,7 @@ I then created the button in the JS and that seems to work as intended.
 - Wrapping code into functions
 
 **Notes:**
+
 My initial tactic for this project was to use the `if (terms.scrollHeight - terms.clientHeight === terms.scrollTop)..` method of figuring out if you are at the bottom of the page. From watching the example I learnt about the `IntersectionObserver()` this seems like a nice solution as you can stop watching after the event you wanted has happened.
 
 ---
