@@ -4,6 +4,10 @@ const tabButton = document.querySelectorAll(`[role="tab"]`);
 // 1. Grab the tab panel using their `[role="tabpanel"]`
 const tabPanel = document.querySelectorAll(`[role="tabpanel"]`);
 
+const tabs = document.querySelector('.tabs');
+
+console.log(tabPanel.parentNode);
+
 // 3. Functions that run after the event listener triggers.
 function openPanel(e) {
   // capture current tab button pressed
@@ -21,8 +25,8 @@ function openPanel(e) {
     panel.setAttribute('hidden', true);
   });
 
-  tabPanel
-    .querySelector(`#${currentTab.getAttribute('aria-controls')}`)
+  tabs
+    .querySelector(`[aria-labelledby=${currentTab.getAttribute('id')}]`)
     .removeAttribute('hidden');
 
   // Finding related tab panel could be done by matching the tab button `id` with the tab panel `aria-labelledby` need to figure out how to do this matching.

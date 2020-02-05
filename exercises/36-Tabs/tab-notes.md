@@ -40,6 +40,8 @@ First steps:
 
 - For the tabPanels, I was able to hide them all easily enough, however showing the one we want to see isn't working with the current set up.
 
+- I used this snippet from the MDN docs
+
 ```
  tabPanel
     .querySelector(`#${currentTab.getAttribute('aria-controls')}`)
@@ -48,3 +50,22 @@ First steps:
 ```
 
 - I realized that as I am using querySelector which looks down the DOM tree, I might need to move a level up so it can look down on the tabPanels. Will try this next.
+
+---
+
+- Got that part hooked up but it was still giving an error. I figured out that I wasn't pointing to the correct elements, so once I fixed it, it now switches!
+
+```
+  tabs
+    .querySelector(`[aria-labelledby=${currentTab.getAttribute('id')}]`)
+    .removeAttribute('hidden');
+```
+
+This above resolves to look down into the `tabPanels` and select the one that has the `aria-labelledby` that matches the `currentTab` that is selected, using an expression in a [template literal](https://css-tricks.com/template-literals/), then removes the `hidden` attribute.
+
+```
+      tabs
+    .querySelector(`[aria-labelledby=js}]`)
+    .removeAttribute('hidden');
+
+```
