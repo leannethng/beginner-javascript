@@ -79,3 +79,16 @@ This above resolves to look down into the `tabPanels` and select the one that ha
 ## 2/6
 
 - Added new CSS styling using inspiration from [Codrops tab style inspiration](https://tympanus.net/Development/TabStylesInspiration/)
+
+---
+
+Watched the solution edits made
+Notes from solution:
+
+- Pushed the `tabs` const to the top and then used tabs to query select the `tabButton` and the `tabPanel`.
+
+  - This is good hygene incase there are multiple tabs on the page, this will just scope into these tabs.
+
+- If you can reach for a accessibility attribute over a class then use that.
+
+- Using `find()` needs to have an array input. The tabs are a `nodeList` not an array so we need to turn this `nodeList` into an array to use it. Wrap `Array.from()` around the `nodeList` to turn it into an array.
