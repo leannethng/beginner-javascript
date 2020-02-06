@@ -9,6 +9,8 @@ Each of these projects have been built using assets from Beginner JavaScript Cou
 
 [Scroll to Accept](#Scroll-to-Accept)
 
+[Tabs](#Tabs)
+
 ---
 
 ## Etch-a-Sketch
@@ -83,6 +85,30 @@ I then created the button in the JS and that seems to work as intended.
 **Notes:**
 
 My initial tactic for this project was to use the `if (terms.scrollHeight - terms.clientHeight === terms.scrollTop)..` method of figuring out if you are at the bottom of the page. From watching the example I learnt about the `IntersectionObserver()` this seems like a nice solution as you can stop watching after the event you wanted has happened.
+
+---
+
+## Tabs
+[Codepen Demo](https://codepen.io/leannethng/pen/PoqodoK)
+
+[Project Code](https://github.com/leannethng/beginner-javascript/tree/master/exercises/36-Tabs)
+
+**Useful links I used:**
+* [Hidden attribute docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden)
+* [ARIA: Tab Role Docs](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Tab_Role)
+* [.setAttribute() MDN Doc](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute)
+* [Codrops tab style inspiration](https://tympanus.net/Development/TabStylesInspiration/)
+
+**Learnt:**
+- Using `hidden` attribute
+- Aria tab role
+- DOM tree, moving back up the tree to look down on multiple elements
+
+**Notes:**
+
+[I wrote up a lot of notes on this project here](https://github.com/leannethng/beginner-javascript/blob/master/exercises/36-Tabs/tab-notes.md)
+
+
 
 ---
 
