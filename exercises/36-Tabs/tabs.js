@@ -25,11 +25,11 @@ function openPanel(e) {
     panel.setAttribute('hidden', true);
   });
 
+  // Finding related tab panel could be done by matching the tab button `id` with the tab panel `aria-labelledby` need to figure out how to do this matching.
+
   tabs
     .querySelector(`[aria-labelledby=${currentTab.getAttribute('id')}]`)
     .removeAttribute('hidden');
-
-  // Finding related tab panel could be done by matching the tab button `id` with the tab panel `aria-labelledby` need to figure out how to do this matching.
 }
 
 // 2. Listen for clicks - probably need to do the forEach loop over the tab buttons

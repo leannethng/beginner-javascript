@@ -1,3 +1,7 @@
+# Tabs Project
+
+## 2/5
+
 Initial thoughts:
 
 - Started by looking at the HTML and CSS structure to see what parts I can use with JavaScript.
@@ -69,3 +73,9 @@ This above resolves to look down into the `tabPanels` and select the one that ha
     .removeAttribute('hidden');
 
 ```
+
+---
+
+## 2/6
+
+- Added new CSS styling using inspiration from [Codrops tab style inspiration](https://tympanus.net/Development/TabStylesInspiration/)
