@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>If Statements</title>
+  </head>
+  <body>
+    <script>
+      // function sluggify(sentence, lowercase) {
+      //   if (lowercase) {
+      //     return sentence.replace(/\s/g, "-").toLowerCase();
+      //   }
+      //   //else
+      //   return sentence.replace(/\s/g, "-");
+      // }
+
+      // drier way
+      function sluggify(sentence, lowercase) {
+        const slug = sentence.replace(/\s/g, "-");
+        if (lowercase) {
+          return slug.toLowerCase();
+        }
+        // else
+        return slug;
+      }
+
+      const phrase1 = sluggify("Hello, I like beans!", true);
+
+      console.log(phrase1);
+    </script>
+  </body>
+</html>
