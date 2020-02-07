@@ -93,3 +93,74 @@ if condition is true return 'you have a dog', this can be fliped with a bang.
       console.log('you don't have a dog');
        }
     ```
+
+Double bang means true, don't need ot use that often if you understand truthy and falsy.
+`if (!!dog) { console.log('you have a dog'); }`
+
+[Bang Bang](https://medium.com/better-programming/javascript-bang-bang-i-shot-you-down-use-of-double-bangs-in-javascript-7c9d94446054)
+
+### Shorthand if statement with ternarys
+
+```
+  const count = 5;
+  const word = count === 1 ? 'item' : 'items';
+  const sentence = `You have ${count} item${count === 1 ? '' : 's'} in your cart`;
+  console.log(sentence);
+
+```
+
+- Instead of if statement:
+
+```
+  const count = 5;
+  let word;
+  if (count === 1) {
+    word = 'item';
+  } else {
+    word = 'items';
+  }
+
+```
+
+- You can use `null` as the second parameter if you don't need anything else to happen. You always need to have a false case
+
+```
+    function showAdminBar() {
+      console.log('Showing admin bar');
+    }
+
+    const isAdmin = false;
+    isAdmin ? showAdminBar() : null;
+```
+
+- And And trick
+
+```
+    function check1() {
+      console.log('Running check 1');
+      return true;
+    }
+    function check2() {
+      console.log('Running check 2');
+      return false;
+    }
+    function check3() {
+      console.log('Running check 3');
+      return true;
+    }
+
+    if (check1() && check2() && check3()) {
+      console.log('all checks passed');
+    } else {
+      console.log('Some checks failed');
+    }
+
+```
+
+Short circuiting meand hop out the code if one comes back as false, no need to keep checking.
+
+- Can use `&&` as a kind of check, if `isAdmin` is false it won't continue to show the admin
+
+`isAdmin && showAdminBar();`
+
+## Case Switch and animating a turtle

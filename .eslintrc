@@ -2,4 +2,7 @@
   "extends": [
     "wesbos"
   ]
+  "rules":{
+    "no-useless-return":"warn"
+  }
 }
