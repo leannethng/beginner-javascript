@@ -161,6 +161,25 @@ Short circuiting meand hop out the code if one comes back as false, no need to k
 
 - Can use `&&` as a kind of check, if `isAdmin` is false it won't continue to show the admin
 
-`isAdmin && showAdminBar();`
+```
+isAdmin && showAdminBar();
+```
 
 ## Case Switch and animating a turtle
+
+- Grabbing a css value in JS
+
+These are common ways to grab named css attributes
+
+```
+  turtle.style.background = 'red';
+  turtle.style['background'] = 'red';
+
+```
+
+As we are using css custom properties, we need to use `setAttribute` [Custom Properties](https://developer.mozilla.org/en-US/docs/Web/CSS/--*)
+
+```
+  turtle.setAttribute('style', `--x: ${x}px; --y: ${y}px;`);
+
+```
