@@ -183,3 +183,63 @@ As we are using css custom properties, we need to use `setAttribute` [Custom Pro
   turtle.setAttribute('style', `--x: ${x}px; --y: ${y}px;`);
 
 ```
+
+## Intervals and timers
+
+- Timeout - after 5 secs
+- Intervals - every 5 secs
+
+```
+setTimeout(callback, milliseconds)
+```
+
+JavaScript lines up the code to be run then keeps going. Asyncronous code.
+
+```
+      function buzzer() {
+        console.log('ENNGGGGGGG');
+      }
+
+      console.log('Starting');
+      setTimeout(buzzer, 500);
+      console.log('finishing');
+```
+
+- SetInterval() runs after time given then keeps running.
+
+- If we want it to start immediately we need to write a custom function for that
+
+```
+      function buzzer() {
+        console.log('ENNGGGGGGG');
+      }
+
+      function setImmediateInterval(funcToRun, ms) {
+        // right away call that function
+        funcToRun();
+        // run a regular interval
+        return setInterval(funcToRun, ms);
+      }
+
+      setImmediateInterval(buzzer, 2000);
+      function sayHi() {
+        console.log('Heyyy');
+      }
+```
+
+- Clearing timers - Save reference to the timer in a variable so we can stop it
+
+```
+      function destroy() {
+        document.body.innerHTML = `<p>DESTROYED</p>`;
+      }
+
+      const bombTimer = setTimeout(destroy, 5000);
+
+      window.addEventListener('click', function() {
+        console.log('You clicked! You saved the world');
+        // ???? How do i stop
+        clearTimeout(bombTimer); // STOP THE TIMER FROM RUNNING
+      });
+
+```
