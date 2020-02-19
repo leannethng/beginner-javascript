@@ -2,6 +2,8 @@
 
 Each of these projects have been built using assets from Beginner JavaScript Course by Wes Bos. My strategy with these projects is to use the requirements to tackle each project myself first before watching the solution. Below are my notes, learnings and finished projects.
 
+[Notes](https://github.com/leannethng/notes/tree/master/beginner-javascript)
+
 ## Project List:
 
 [Etch-a-Sketch](#Etch-a-Sketch)
@@ -117,7 +119,7 @@ My initial tactic for this project was to use the `if (terms.scrollHeight - term
 
 **Notes:**
 
-[I wrote up a lot of notes on this project here](https://github.com/leannethng/beginner-javascript/blob/master/exercises/36-Tabs/tab-notes.md)
+[I wrote up a lot of notes on this project here](https://github.com/leannethng/notes/blob/master/beginner-javascript/module-6-tabs-project.md)
 
 ---
 
