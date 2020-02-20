@@ -6,6 +6,53 @@
     <title>Document</title>
   </head>
   <body>
-    <script></script>
+    <ul class="prizes"></ul>
+    <script>
+      const person1 = {
+        name: 'Leanne',
+        age: 200
+      };
+
+      const myMap = new Map();
+      // .set()
+      myMap.set('name', 'leanne');
+      myMap.set(100, 'This is a number');
+
+      myMap.set(person1, 'Really cool');
+
+      const score = 100;
+      const prizes = new Map();
+      prizes.set(100, 'Bear');
+      prizes.set(200, 'Duck');
+      prizes.set(300, 'Chicken');
+
+      console.log(`you win a ${prizes.get(score)}`);
+
+      // select ul
+      const ul = document.querySelector('.prizes');
+      // This just gives the values
+      // prizes.forEach(entry => {
+      //   console.log(entry);
+      // });
+
+      // this give the arrays
+      // for (const prize of prizes) {
+      //   // console.log(prize);
+      //   console.log(prize[0], prize[1]);
+      // }
+
+      // Destructuring
+      for (const [points, prize] of prizes) {
+        console.log(points, prize);
+        const li = `<li>${points} - ${prize}</li>`;
+        ul.insertAdjacentHTML('beforeend', li);
+      }
+
+      //  .has()
+
+      // .delete()
+
+      myMap.delete('name');
+    </script>
   </body>
 </html>
