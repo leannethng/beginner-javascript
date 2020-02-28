@@ -8,6 +8,8 @@
   <body>
     <script>
       // ------ Method 1 --------
+      //  Standard for loop with parameters passed through a function
+
       // function evenList(listItem) {
       //   // Storing our data outside of the loop
       //   let myList = 0;
@@ -24,24 +26,52 @@
       //   // Returning the end result after the loop is done
       //   return myList;
       // }
+      // const myList1 = evenList([1, 2, 3, 4, 5, 6, 7, 8]);
+      // console.log(myList1);
 
       // ------ Method 2 -------
-      const evenList = [1, 2, 3, 4, 5, 6, 7, 8];
-      let myList = 0;
-      const myList1 = [];
-      evenList.forEach(function(listItem) {
-        if (listItem % 2 === 0) {
-          //     // console.log(i);
-          //     // Adding any values that pass the if statement test to our myLsit
-          myList += listItem;
-          // Making a new list to grab the filtered results
-          myList1.push(listItem);
-          //   }
-        }
-      });
+      // ForEach loop but not wrapped in a function
 
-      console.log(myList);
-      console.log(myList1);
+      // const evenList = [1, 2, 3, 4, 5, 6, 7, 8];
+      // let myList = 0;
+      // const myList1 = [];
+      // evenList.forEach(function(listItem) {
+      //   if (listItem % 2 === 0) {
+      //     //     // console.log(i);
+      //     //     // Adding any values that pass the if statement test to our myLsit
+      //     myList += listItem;
+      //     // Making a new list to grab the filtered results
+      //     myList1.push(listItem);
+      //     //   }
+      //   }
+      // });
+      // console.log(myList);
+
+      // ------ Method 3 -------
+      // ForEach loop wrapped in a function
+
+      function processList(list) {
+        const evenList = list;
+        // console.log(evenList);
+        let myList = 0;
+
+        evenList.forEach(function(listItem) {
+          if (listItem % 2 === 0) {
+            //     // console.log(i);
+            //     // Adding any values that pass the if statement test to our myLsit
+            myList += listItem;
+            // Making a new list to grab the filtered results
+            // console.log(myList);
+            //   }
+          }
+        });
+        // console.log(myList);
+        return myList;
+      }
+      const list1 = processList([1, 2, 3, 4, 5, 6, 7, 8]);
+      const list2 = processList([0, 2, 3, 4, 5, 6, 7, 10]);
+      console.log(list1);
+      console.log(list2);
     </script>
   </body>
 </html>
