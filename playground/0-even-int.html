@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // ------ Method 1 --------
+      // function evenList(listItem) {
+      //   // Storing our data outside of the loop
+      //   let myList = 0;
+
+      //   for (let i = 0; i <= listItem.length; i++) {
+      //     // 0 for even, 1 for odd
+      //     if (i % 2 === 0) {
+      //       // console.log(i);
+      //       // Adding any values that pass the if statement test to our myLsit
+      //       myList += i;
+      //     }
+      //   }
+
+      //   // Returning the end result after the loop is done
+      //   return myList;
+      // }
+
+      // ------ Method 2 -------
+      const evenList = [1, 2, 3, 4, 5, 6, 7, 8];
+      let myList = 0;
+      const myList1 = [];
+      evenList.forEach(function(listItem) {
+        if (listItem % 2 === 0) {
+          //     // console.log(i);
+          //     // Adding any values that pass the if statement test to our myLsit
+          myList += listItem;
+          // Making a new list to grab the filtered results
+          myList1.push(listItem);
+          //   }
+        }
+      });
+
+      console.log(myList);
+      console.log(myList1);
+    </script>
+  </body>
+</html>
