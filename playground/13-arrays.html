@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
+  <body>
+    <script>
+      // Array literal
+      const names = ['leanne', 'bob', 'bebo'];
+      //  Other way using the new keyword
+      // const names1 = new Array();
+      // Access items
+      console.log(names[0]);
+      //  How many things in an array
+      console.log(names.length);
+      //  Access last item in an array
+      console.log(names[names.length - 1]);
+
+      // ---- Mutable methods ----
+      names.push('joan');
+      console.log(names);
+
+      names.unshift('lisa');
+      console.log(names);
+
+      // Immutable way to use mutable methods
+      const names2 = [...names, 'joan'];
+      const names3 = ['lisa', ...names];
+
+      const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      // first number is starting point, 2nd is the count of how many from that point you want to delete.
+      numbers.splice(3, 6);
+      console.log(numbers);
+
+      // --- adding items to the middle
+      // want to add Diablo between animal crossing and WoW
+      const games = ['stardew', 'animal crossing', 'WoW', 'Monster Hunter'];
+      // first number is starting point, 2nd is count of how many, 2md does not index from 0
+      const newGames = [...games.slice(0, 2), 'diablo', ...games.slice(2)];
+
+      // --- removing items from the array
+      // want to remove 'WoW'
+
+      const newGames2 = [...newGames.slice(0, 3), ...newGames.slice(4)];
+      console.log(newGames);
+      console.log(newGames2);
+
+      // Delete example
+      const comments = [
+        { text: 'cool beans', id: 123 },
+        { text: 'awesome', id: 127 },
+        { text: 'nice', id: 163 },
+        { text: 'woooooo', id: 323 },
+        { text: 'bamm', id: 143 }
+      ];
+
+      function deleteComment(id, comments) {
+        // Find the index of the item in the array we want to delete
+        // Take the comments and useFind index to see if the comment id is equal to the id that has been passed in.
+        const commentIndex = comments.findIndex(comment => comment.id === id);
+        // return a new array without that item in it
+        return [
+          ...comments.slice(0, commentIndex),
+          ...comments.slice(commentIndex + 1)
+        ];
+      }
+      // passing in an index and the comments array
+      const deleteMe = deleteComment(323, comments);
+      console.log(deleteMe);
+
+      // Verbose way
+      // const bobIndex = names.findIndex(name => {
+      //   if (name === 'bob') {
+      //     return true;
+      //   }
+      //   return false;
+      // });
+
+      // Explicit return
+      // const bobIndex = names.findIndex(name => {
+      //  return name === 'bob';
+      // });
+
+      // implicit return
+      const bobIndex = names.findIndex(name => name === 'bob');
+
+      const newNamesWithoutBob = [
+        // get everything up to bob
+        ...names.slice(0, bobIndex),
+        // get everything after bob
+        ...names.slice(bobIndex + 1)
+      ];
+
+      console.log(`bobIndex = ${bobIndex}`);
+      console.log(names[bobIndex]);
+
+      console.log(newNamesWithoutBob);
+
+      // // ---- Mutation methods ----
+      // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+      // // const numbersBackwards = numbers.reverse();
+      // // console.log(numbersBackwards);
+
+      // // Anytime you want to use a mutation method and you don't want to change the original, you need ot take a copy first
+
+      // const numbersReversed = [...numbers];
+      // numbersReversed.reverse();
+      // console.log(numbersReversed);
+
+      // // You can also immediately call the method on the array like this:
+      // const numbersReversed = [...numbers].reverse();
+
+      // // ---- Immutable ----
+      // const pizzaSlice = numbers.slice(2, 4);
+      // console.log(numbers);
+      // console.log(pizzaSlice);
+    </script>
+  </body>
+</html>
