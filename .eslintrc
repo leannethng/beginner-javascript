@@ -1,7 +1,13 @@
 {
-  "extends": ["wesbos"],
+  "extends": [
+    "wesbos"
+  ],
   "rules": {
     "no-useless-return": "warn",
-    "comma-dangle": "warn"
+    "comma-dangle": 0,
+    "space-before-function-paren": [
+      "error",
+      "ignore"
+    ],
   }
 }
