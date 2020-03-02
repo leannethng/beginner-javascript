@@ -50,7 +50,7 @@
     ];
 
     /*
-      Static Methods
+     ---- Static Methods ----
     */
 
     // Array.of();
@@ -79,8 +79,24 @@
     const myValues = Object.values(meats);
     console.log(myValues);
 
+    Object.values(meats).forEach(qty => { console.log(qty) });
+
+    Object.entries(meats).forEach(entry => {
+      // const key = entry[0];
+      // const value = entry[1];
+      // --- Destructuring inside ---
+      const [key, value] = entry;
+      console.log(key, value);
+    });
+
+    // Destructuring outside
+    Object.entries(meats).forEach(([key, value]) => {
+      console.log(key, value);
+    });
+
+
     /*
-      Instance Methods
+      ---- Instance Methods ----
     */
 
     // Display all bun types with " or " - use join()
@@ -109,28 +125,36 @@
     // Do the last four,but immutable (with spreads and new variables)
     const myToppings1 = [...toppings];
     const myToppingsPop = myToppings1.pop();
-    console.log(myToppings1);
+    // console.log(myToppings1);
+
+    // other way to do it
+    let newToppings = toppings.slice(0, toppings.length - 1);
+    newToppings = [...newToppings, toppings[toppings.length - 1]];
+
+    // console.log(toppings[toppings.length - 1]);
+
 
     const myToppings2 = [...myToppings1];
     myToppings2.push(myToppingsPop);
-    console.log(myToppings2);
+    // console.log(myToppings2);
 
     const myToppings3 = [...toppings];
     const myToppingsShift = myToppings3.shift();
-    console.log(myToppings3);
+    // console.log(myToppings3);
 
     const myToppings4 = [...myToppings3];
     myToppings4.unshift(myToppingsShift);
-    console.log(myToppings4);
+    // console.log(myToppings4);
 
     // Make a copy of the toppings array with slice()
     const toppingsSlice = toppings.slice(0);
-    console.log(toppingsSlice);
+    // console.log(toppingsSlice);
     // Make a copy of the toppings array with a spread
     const toppingsSpread = [...toppings];
-    console.log(toppingsSpread);
+    // console.log(toppingsSpread);
     // take out items 3 to 5 of your new toppings array with splice()
-    toppingsSpread.splice(2, 3);
+    toppingsSpread.splice(3, 5);
+    // console.log(toppingsSpread);
     // find the index of Avocado with indexOf() / lastIndexOf()
     const toppingsAvo = toppingsSpread.indexOf('Avocado');
     const toppingsAvoLast = toppingsSpread.lastIndexOf('Avocado');
@@ -139,16 +163,38 @@
     const hotSauce = [...toppings];
     const isHotSauce = hotSauce.includes('hot sauce');
     // add it if it's not
-    hotSauce.push('hot sauce');
+    if (!isHotSauce) {
+      hotSauce.push('hot sauce');
+    }
     // flip those toppings around with reverse()
-    hotSauce.reverse();
+    // hotSauce.reverse();
+    const toppingsReversed = [...toppings].reverse();
 
     /*
-      Callback Methods
+      ----  Callback Methods ----
     */
 
     // find the first rating that talks about a burger with find()
     // feedback[i].comment
+
+    // function findBurgRating(singleFeedback) {
+    //   return singleFeedback.comment.includes('burg');
+    // }
+
+    function findMyWord(word) {
+      return function (singleFeedback) {
+        return singleFeedback.comment.includes(word);
+      }
+    }
+
+    const burgFinder = feedback.find(findMyWord('burg'))
+    const smoothieFinder = feedback.find(findMyWord('Smoothie'))
+    // const burgRating = feedback.find(findMyWord);
+    console.log(burgFinder);
+    console.log(smoothieFinder);
+
+
+
 
     // --- Arrow function ---
     const burgers = feedback.find(({ comment }) => comment.includes('burger'));
@@ -157,26 +203,41 @@
     // const burgers = feedback.find(function({ comment }) {
     //   return comment.includes('burger');
     // });
-    console.log(burgers);
+    // console.log(burgers);
 
     for (const { comment: c } of feedback) {
       // console.log(feedback[1].comment);
-      console.log(c);
+      // console.log(c);
     }
     // find all ratings that are above 2 with filter()
     const myRating = feedback.filter(({ rating }) => rating > 2);
-    console.log(myRating);
+    // console.log(myRating);
+
+    function showRatingsAbove(ratingAbove) {
+      return function (singleFeedback) {
+        return singleFeedback.rating > ratingAbove;
+      }
+    }
+
+    const goodReviews = feedback.filter(showRatingsAbove(3));
+
+
+    console.log(goodReviews)
+
+    // const goodReviews = feedback.filter(singleFeedback => singleFeedback.rating)
+    // console.log(goodReviews)
 
     // find all ratings that talk about a burger with filter()
     // const burgerRatings = feedback.filter(({ comment }) =>
     //   comment.includes('burger').toLowerCase()
     // );
     const filterItems = (arr, query) => {
-
       return arr.filter(({ comment }) => comment.toLowerCase().indexOf(query.toLowerCase()) !== -1)
     }
 
-    console.log(filterItems(feedback, 'burger'))
+    // indexOf returns the index if it can find a match otherwise it returns -1
+    // console.log(feedback[1].comment.indexOf('burger'));
+    // console.log(filterItems(feedback, 'burger'));
     // Remove the one star rating however you like!
 
     // check if there is at least 5 of one type of meat with some()
