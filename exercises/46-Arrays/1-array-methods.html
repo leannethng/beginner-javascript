@@ -174,7 +174,7 @@
       ----  Callback Methods ----
     */
 
-    // find the first rating that talks about a burger with find()
+    //  *** find the first rating that talks about a burger with find()
     // feedback[i].comment
 
     // function findBurgRating(singleFeedback) {
@@ -193,9 +193,6 @@
     console.log(burgFinder);
     console.log(smoothieFinder);
 
-
-
-
     // --- Arrow function ---
     const burgers = feedback.find(({ comment }) => comment.includes('burger'));
 
@@ -209,48 +206,64 @@
       // console.log(feedback[1].comment);
       // console.log(c);
     }
-    // find all ratings that are above 2 with filter()
+    //  *** find all ratings that are above 2 with filter()
     const myRating = feedback.filter(({ rating }) => rating > 2);
     // console.log(myRating);
 
-    function showRatingsAbove(ratingAbove) {
+    function filterByMinRating(ratingAbove) {
       return function (singleFeedback) {
         return singleFeedback.rating > ratingAbove;
       }
     }
 
-    const goodReviews = feedback.filter(showRatingsAbove(3));
+    const goodReviews = feedback.filter(filterByMinRating(2));
+    console.table(goodReviews)
 
-
-    console.log(goodReviews)
-
-    // const goodReviews = feedback.filter(singleFeedback => singleFeedback.rating)
-    // console.log(goodReviews)
-
-    // find all ratings that talk about a burger with filter()
-    // const burgerRatings = feedback.filter(({ comment }) =>
-    //   comment.includes('burger').toLowerCase()
-    // );
     const filterItems = (arr, query) => {
       return arr.filter(({ comment }) => comment.toLowerCase().indexOf(query.toLowerCase()) !== -1)
     }
 
+    // const goodReviews = feedback.filter(singleFeedback => singleFeedback.rating)
+    // console.log(goodReviews)
+
+    // *** find all ratings that talk about a burger with filter()
+    // const burgerRatings = feedback.filter(({ comment }) =>
+    //   comment.includes('burger').toLowerCase()
+    // );
+
+    const burgFilter = feedback.filter(findMyWord('burg'))
+    console.table(burgFilter)
+
     // indexOf returns the index if it can find a match otherwise it returns -1
     // console.log(feedback[1].comment.indexOf('burger'));
     // console.log(filterItems(feedback, 'burger'));
-    // Remove the one star rating however you like!
 
-    // check if there is at least 5 of one type of meat with some()
-    // make sure we have at least 3 of every meat with every()
-    // sort the toppings alphabetically with sort()
-    // sort the order totals from most expensive to least with .sort()
-    // Sort the prices with sort()
+    //  *** Remove the one star rating however you like!
+
+    //Calling the function above
+    const removeOneStarReviews = feedback.filter(filterByMinRating(1));
+    console.table(removeOneStarReviews);
+
+    // Creating it manually
+    const removeBadRating = feedback.filter(badRating => badRating.rating !== 1);
+    console.table(removeBadRating)
+
+    //  *** check if there is at least 5 of one type of meat with some()
+
+    const isThereEnoughMeat = Object.values(meats).some(meatValue => meatValue > 5);
+    console.log(isThereEnoughMeat);
+
+    //  *** make sure we have at least 3 of every meat with every()
+    const isThereAtLeastThreeMeat = Object.values(meats).every(meatValue => meatValue >= 3);
+    console.log(isThereAtLeastThreeMeat);
+    //  *** sort the toppings alphabetically with sort()
+    //  *** sort the order totals from most expensive to least with .sort()
+    //  *** Sort the prices with sort()
 
     /*
       Looping Methods (next)
     */
   </script>
-
 </body>
 
 </html>
