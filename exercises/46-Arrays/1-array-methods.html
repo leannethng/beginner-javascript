@@ -257,9 +257,24 @@
     const isThereAtLeastThreeMeat = Object.values(meats).every(meatValue => meatValue >= 3);
     console.log(isThereAtLeastThreeMeat);
     //  *** sort the toppings alphabetically with sort()
-    //  *** sort the order totals from most expensive to least with .sort()
-    //  *** Sort the prices with sort()
+    console.table(toppings);
+    const sortToppings = [...toppings].sort()
+    console.table(sortToppings);
+    console.table(toppings);
 
+    //  *** sort the order totals from most expensive to least with .sort()
+    console.table(orderTotals)
+
+    function compareNumbers(a, b) {
+      return a - b;
+    }
+
+    const sortOrderTotals = [...orderTotals].sort(compareNumbers);
+    console.table(sortOrderTotals)
+
+    //  *** Sort the prices with sort()
+    const sortPrices = [...prices].sort(compareNumbers);
+    console.table(sortOrderTotals)
     /*
       Looping Methods (next)
     */
