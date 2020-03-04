@@ -273,8 +273,19 @@
     console.table(sortOrderTotals)
 
     //  *** Sort the prices with sort()
-    const sortPrices = [...prices].sort(compareNumbers);
-    console.table(sortOrderTotals)
+    console.log(Object.entries(prices));
+
+    function comparePrices(a, b) {
+      const aPrice = a[1];
+      const bPrice = b[1];
+      // debugger;
+      console.log(a, b);
+      return aPrice - bPrice;
+    }
+
+    const sortPrices = Object.entries(prices).sort(comparePrices);
+    console.table(sortPrices);
+    console.table(Object.fromEntries(sortPrices));
     /*
       Looping Methods (next)
     */
