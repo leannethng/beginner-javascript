@@ -2,7 +2,7 @@ const shoppingForm = document.querySelector('.shopping');
 const list = document.querySelector('.list');
 
 // we need an array to hold our state
-const items = [];
+let items = [];
 
 function handleSubmit(e) {
   e.preventDefault();
@@ -13,7 +13,6 @@ function handleSubmit(e) {
   if (!name) {
     return;
   }
-
   const item = {
     name,
     id: Date.now(),
@@ -28,7 +27,8 @@ function handleSubmit(e) {
   e.target.reset();
 
   // Ideally don't run the function below for rendering the html, it tightly couples the handle submit with the rendering which can cause issues and be clunky. We will need ot display the items multiple times so would need to call it a lot. In larger apps, you may need to do a few more things after this. So to avoid duplication we need to make custom events that tells anyone else who needs to know that items have been updated.
-  displayItems();
+  // displayItems();
+  list.dispatchEvent(new CustomEvent('itemsUpdated'));
 }
 
 function displayItems() {
@@ -36,14 +36,65 @@ function displayItems() {
   const html = items
     .map(
       item => `<li class="shopping-item">
-     <input type="checkbox">
+     <input value = "${item.id}" type="checkbox" ${
+        item.complete ? 'checked' : ''
+      }>
      <span class = itemName>${item.name}</span>
-     <button aria-label="Remove ${item.name}">&times;</button>
+     <button aria-label="Remove ${item.name}" value = "${
+        item.id
+      }">&times;</button>
      </li>`
     )
     .join('');
   list.innerHTML = html;
-  console.log(html);
+  // console.log(html);
+}
+// Adding items to Local Storage
+function mirrorToLocalStorage() {
+  console.info('saving items to local storage');
+  localStorage.setItem('items', JSON.stringify(items));
+}
+
+function restoreFromLocalStorage() {
+  console.info('Restoring from local storage');
+  const lsItems = JSON.parse(localStorage.getItem('items'));
+  if (lsItems.length) {
+    // items = lsItems;
+    items.push(...lsItems);
+    list.dispatchEvent(new CustomEvent('itemsUpdated'));
+  }
+}
+
+function deleteItem(id) {
+  // console.log('Deleting item', id);
+  // update the items array without this one
+  items = items.filter(item => item.id !== id);
+  // console.log(items);
+  list.dispatchEvent(new CustomEvent('itemsUpdated'));
+}
+
+function markAsComplete(id) {
+  console.log('marking as complete', id);
+  const itemRef = items.find(item => item.id === id);
+  console.log(itemRef);
+  itemRef.complete = !itemRef.complete;
+  list.dispatchEvent(new CustomEvent('itemsUpdated'));
 }
 
 shoppingForm.addEventListener('submit', handleSubmit);
+// This listens for the dispatchEvent in the handleSubmit function and then triggers the displayItem event rather than have it trigger directly from the handleSubmit function
+list.addEventListener('itemsUpdated', displayItems);
+list.addEventListener('itemsUpdated', mirrorToLocalStorage);
+// Event delegation, listen for click on the list UL but then delegate the click over to the button if that is what is clicked
+list.addEventListener('click', function(e) {
+  // console.log(e.target, e.currentTarget);
+  const id = parseInt(e.target.value);
+  if (e.target.matches('button')) {
+    deleteItem(id);
+  }
+  if (e.target.matches('input[type = "checkbox"]')) {
+    markAsComplete(id);
+  }
+});
+// Runs on page load
+restoreFromLocalStorage();
