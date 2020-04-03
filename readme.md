@@ -125,17 +125,22 @@ My initial tactic for this project was to use the `if (terms.scrollHeight - term
 
 ## Shopping Form
 
+[Codepen Demo](https://codepen.io/leannethng/pen/poJmJrv)
+
 [Project Code](https://github.com/leannethng/beginner-javascript/tree/master/exercises/57-ShoppingList)
-
-**Useful links I used to solve this:**
-
--
 
 **Learnt:**
 
--
+- Using `Date.now();` can be an easy way to get a unique id number for small apps
+- `dispatchEvent()` is used to create a custom event that is used to tell anyone else who needs to know that items have been updated. Attaching an event listener with this custom event can then be used to update other parts that need it. 
+`list.addEventListener('itemsUpdated', displayItems);`
+- Local Storage - `localStorage.setItem();` & `localStorage.getItem('items')`
+- Saving to local storage requires you to set items as JSON objects with `JSON.stringify(items)`
+- Retrieving from local storage with `JSON.parse(localStorage.getItems('items'))`
+- Accessibility - Aria-labels are great if the button doesn't have a descriptive name, ie if you use an X for the button text, you can add in a label like `aria-label="Remove ${item.name}" ` so that screen readers will give useful information to the user.
 
 **Notes:**
+[Project notes are here](https://github.com/leannethng/beginner-javascript/blob/master/notes/module-10-exercises.md)
 
 ---
 
