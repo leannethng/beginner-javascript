@@ -2,7 +2,7 @@
 
 Each of these projects have been built using assets from Beginner JavaScript Course by Wes Bos. My strategy with these projects is to use the requirements to tackle each project myself first before watching the solution. Below are my notes, learnings and finished projects.
 
-[Notes](https://github.com/leannethng/notes/tree/master/beginner-javascript)
+[Notes](https://github.com/leannethng/beginner-javascript/tree/master/notes/)
 
 ## Project List:
 
@@ -119,7 +119,23 @@ My initial tactic for this project was to use the `if (terms.scrollHeight - term
 
 **Notes:**
 
-[I wrote up a lot of notes on this project here](https://github.com/leannethng/notes/blob/master/beginner-javascript/module-6-tabs-project.md)
+[I wrote up a lot of notes on this project here](https://github.com/leannethng/beginner-javascript/tree/master/notes/module-6-tabs-project.md)
+
+---
+
+## Shopping Form
+
+[Project Code](https://github.com/leannethng/beginner-javascript/tree/master/exercises/57-ShoppingList)
+
+**Useful links I used to solve this:**
+
+-
+
+**Learnt:**
+
+-
+
+**Notes:**
 
 ---
 

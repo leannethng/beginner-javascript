@@ -11,25 +11,25 @@ const funkyLetters = {
 // Methods stored inside an object to keep them together
 const filters = {
   sarcastic(letter, index) {
-    if(index % 2){
+    if (index % 2) {
       return letter.toUpperCase();
-    } 
+    }
     return letter.toLowerCase();
   },
   // the longer way to write - funky: function(){}
   funky(letter) {
-    //first check if there is a funky letter for this case
+    // first check if there is a funky letter for this case
     let funkyLetter = funkyLetters[letter];
-    if (funkyLetter) return funkyLetter
+    if (funkyLetter) return funkyLetter;
     // if not then check if there is a lower case letter
     funkyLetter = funkyLetters[letter.toLowerCase()];
-    if (funkyLetter) return funkyLetter
+    if (funkyLetter) return funkyLetter;
     return letter;
     //  if nothing then return the letter
   },
   unable(letter) {
-    const random = Math.floor(Math.random()* 3)
-    if(letter === ' ' && random === 2){
+    const random = Math.floor(Math.random() * 3);
+    if (letter === ' ' && random === 2) {
       return '...';
     }
     return letter;
@@ -48,9 +48,6 @@ function transformText(text) {
   result.textContent = mod.join('');
 }
 
-
-
-
 // Display the text in the result paragraph
 
 // based on which filter input is selected alter the text
@@ -58,6 +55,8 @@ function transformText(text) {
 // Handler to output the text
 textArea.addEventListener('input', e => transformText(e.target.value));
 
-filterInputs.forEach(input => input.addEventListener('input', () => {
-  transformText(textArea.value);
-}))
+filterInputs.forEach(input =>
+  input.addEventListener('input', () => {
+    transformText(textArea.value);
+  })
+);
