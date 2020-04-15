@@ -11,25 +11,29 @@
     <p class="user"></p>
 
     <script>
-      const endpoint = 'https://api.github.com/users/leannethng';
+      const baseEndpoint = 'https://api.github.com';
+      const usersEndpoint = `${baseEndpoint}/users`;
       const userEl = document.querySelector('.user');
+      //  refactoring with async function
 
+      async function displayUser(username) {
+        // Default state before data is pulled, could be a loading spinner etc
+        userEl.textContent = 'loading...';
+
+        //  fetching the usersEndpoint plus the name that was passed in
+        const response = await fetch(`${usersEndpoint}/${username}`);
+        const data = await response.json();
+
+        console.log(data.blog);
+        userEl.textContent = `${data.name} - ${data.blog}`;
+      }
       function handleError(err) {
         console.log('oh no!');
+        userEl.textContent = `Something went wrong: ${err}`;
       }
 
-      // Default state before data is pulled, could be a loading spinner etc
-      userEl.textContent = 'loading...';
-      // Using built in fetch API to grab data using a promise, axios is an alternative
-      // Double promise, fetch the data then use .json() to get the data
-      const leannePromise = fetch(endpoint);
-      leannePromise
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data.blog);
-          userEl.textContent = `${data.name} - ${data.blog}`;
-        })
-        .catch(handleError);
+      // Passing in the name
+      displayUser('leannethng').catch(handleError);
     </script>
   </body>
 </html>
