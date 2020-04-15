@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>APIs</title>
+    <link rel="stylesheet" href="../base.css" />
+  </head>
+
+  <body>
+    <p class="user"></p>
+
+    <script>
+      const endpoint = 'https://api.github.com/users/leannethng';
+      const userEl = document.querySelector('.user');
+
+      function handleError(err) {
+        console.log('oh no!');
+      }
+
+      // Default state before data is pulled, could be a loading spinner etc
+      userEl.textContent = 'loading...';
+      // Using built in fetch API to grab data using a promise, axios is an alternative
+      // Double promise, fetch the data then use .json() to get the data
+      const leannePromise = fetch(endpoint);
+      leannePromise
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data.blog);
+          userEl.textContent = `${data.name} - ${data.blog}`;
+        })
+        .catch(handleError);
+    </script>
+  </body>
+</html>
